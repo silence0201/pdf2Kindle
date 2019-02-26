@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="pdf2Kindle" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="pdf2Kindle" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About pdf2Kindle" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide pdf2Kindle" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit pdf2Kindle" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+                    <connections>
+                        <outlet property="fileLabel" destination="Yxe-kY-XyY" id="kp9-qj-Dv3"/>
+                        <outlet property="fileWell" destination="eiY-Wy-Fvo" id="30P-44-JqY"/>
+                        <outlet property="startButton" destination="UT5-LE-KIJ" id="CSy-Dd-OMF"/>
+                        <outlet property="window" destination="2a1-Eq-lJj" id="lH4-dV-VGu"/>
+                    </connections>
+                </customObject>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <window title="pdf2Kindle" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="2a1-Eq-lJj" userLabel="pdf2Kindle">
+                    <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                    <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                    <rect key="contentRect" x="335" y="390" width="470" height="250"/>
+                    <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1058"/>
+                    <view key="contentView" id="Jts-dL-Nas">
+                        <rect key="frame" x="0.0" y="0.0" width="470" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="eiY-Wy-Fvo">
+                                <rect key="frame" x="182" y="112" width="107" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="k9o-4L-h2W"/>
+                                    <constraint firstAttribute="width" constant="101" id="mkH-3A-WWB"/>
+                                </constraints>
+                                <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" imageFrameStyle="grayBezel" id="91E-AI-nl7"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CPp-a9-yRi">
+                                <rect key="frame" x="69" y="211" width="332" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="RBk-Dw-EoW"/>
+                                    <constraint firstAttribute="height" constant="26" id="o7n-Sh-Ee5"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Please drop a PDF file here" id="ejd-GI-r3M">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-LE-KIJ">
+                                <rect key="frame" x="115" y="13" width="241" height="32"/>
+                                <buttonCell key="cell" type="push" title="Create Kindle Paperwhite version" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SY4-aQ-PuL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="startConversion:" target="Voe-Tx-rLC" id="hqz-dy-0uY"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.canConvert" id="lef-5T-8HR"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yxe-kY-XyY">
+                                <rect key="frame" x="69" y="81" width="332" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="vVc-dr-1UR"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No file selected" id="Ws3-rc-BJo">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xch-cG-FRK">
+                                <rect key="frame" x="0.0" y="70" width="470" height="5"/>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xch-cG-FRK" firstAttribute="trailing" secondItem="Jts-dL-Nas" secondAttribute="trailing" id="8So-lb-CdL"/>
+                            <constraint firstItem="xch-cG-FRK" firstAttribute="top" secondItem="Yxe-kY-XyY" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yv-jO-du3"/>
+                            <constraint firstItem="UT5-LE-KIJ" firstAttribute="centerX" secondItem="xch-cG-FRK" secondAttribute="centerX" id="Iui-A6-955"/>
+                            <constraint firstItem="eiY-Wy-Fvo" firstAttribute="top" secondItem="Jts-dL-Nas" secondAttribute="top" constant="36" id="Kap-8M-nuk"/>
+                            <constraint firstItem="Yxe-kY-XyY" firstAttribute="trailing" secondItem="CPp-a9-yRi" secondAttribute="trailing" id="MmZ-12-Psj"/>
+                            <constraint firstItem="xch-cG-FRK" firstAttribute="centerX" secondItem="Yxe-kY-XyY" secondAttribute="centerX" id="PzX-0R-RlZ"/>
+                            <constraint firstItem="CPp-a9-yRi" firstAttribute="top" secondItem="Jts-dL-Nas" secondAttribute="top" constant="13" id="R9a-UI-G8z"/>
+                            <constraint firstAttribute="bottom" secondItem="UT5-LE-KIJ" secondAttribute="bottom" constant="20" symbolic="YES" id="da3-d6-aap"/>
+                            <constraint firstItem="Yxe-kY-XyY" firstAttribute="top" secondItem="eiY-Wy-Fvo" secondAttribute="bottom" constant="8" symbolic="YES" id="fAJ-J8-gnv"/>
+                            <constraint firstItem="eiY-Wy-Fvo" firstAttribute="centerX" secondItem="CPp-a9-yRi" secondAttribute="centerX" id="hpj-7K-Ii0"/>
+                            <constraint firstItem="xch-cG-FRK" firstAttribute="leading" secondItem="Jts-dL-Nas" secondAttribute="leading" id="wJf-TX-oYG"/>
+                            <constraint firstItem="Yxe-kY-XyY" firstAttribute="leading" secondItem="CPp-a9-yRi" secondAttribute="leading" id="wY0-Fe-ouf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="sIp-GW-hkP"/>
+                    </connections>
+                </window>
+                <userDefaultsController representsSharedInstance="YES" id="uw0-Kg-Lxe"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
